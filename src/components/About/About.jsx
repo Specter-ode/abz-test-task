@@ -15,7 +15,7 @@ const About = ({ marginBottom = 140 }) => {
             world of Front-End Development keeps evolving.
           </p>
           <Link
-            className={s.btn}
+            className={s.link}
             to="sign-up"
             spy={true}
             smooth={true}

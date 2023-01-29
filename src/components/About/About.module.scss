@@ -62,7 +62,23 @@
   margin-bottom: 32px;
   text-align: center;
 }
-.btn {
-  display: flex;
-  justify-content: center;
+
+.link {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100px;
+  border-radius: 80px;
+  padding: 4px 0;
+  border: none;
+  text-align: center;
+  @extend %primary-font;
+  background-color: $main-btn-color;
+}
+.link:hover {
+  background-color: $hover-btn-color;
+}
+
+.link:not(:last-child) {
+  margin-right: 10px;
 }

@@ -1,5 +1,5 @@
 @import '../../sass/utils.scss';
-.btn {
+.link {
   width: 100px;
   border-radius: 80px;
   padding: 4px 0;
@@ -8,11 +8,11 @@
   @extend %primary-font;
   background-color: $main-btn-color;
 }
-.btn:hover {
+.link:hover {
   background-color: $hover-btn-color;
 }
 
-.btn:not(:last-child) {
+.link:not(:last-child) {
   margin-right: 10px;
 }
 

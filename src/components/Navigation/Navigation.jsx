@@ -6,7 +6,7 @@ const Navigation = ({ userRegistered }) => {
     // при нажатии на кнопку происходит плавный скролл к указаной в ней секции
     <nav className={s.block}>
       <Link
-        className={s.btn}
+        className={s.link}
         to="users"
         spy={true}
         smooth={true}
@@ -18,7 +18,7 @@ const Navigation = ({ userRegistered }) => {
       </Link>
       {!userRegistered && (
         <Link
-          className={s.btn}
+          className={s.link}
           to="sign-up"
           spy={true}
           smooth={true}
