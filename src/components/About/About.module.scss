@@ -1,0 +1,68 @@
+@import '../../sass/utils.scss';
+.section {
+  padding-top: 40px;
+  padding-bottom: 79px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: url(../../assets//images/background-mob-x1.jpg); /*  Базовые 1x изображение (for mobile screen) */
+  @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+    background-image: url(../../assets//images/background-mob-x2.jpg); /* Браузер переопределит путь к 2x изображению если плотность экрана как минимум 2 (for mobile screens)*/
+  }
+  @include tablet {
+    padding-top: 89px;
+    padding-bottom: 88px;
+    background-image: url(../../assets//images/background-tablet-x1.jpg); /*  Базовые 1x изображение (for tablet screen) */
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: url(../../assets//images/background-tablet-x2.jpg); /*  Браузер переопределит путь к 2x изображению если плотность экрана как минимум 2 (for tablet screen) */
+    }
+  }
+  @include laptop {
+    max-width: 1024px;
+    padding-top: 164px;
+    padding-bottom: 163px;
+    background-image: url(../../assets//images/background-laptop-x1.jpg); /*  Базовые 1x изображение (for laptop screen) */
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: url(../../assets//images/background-laptop-x2.jpg); /*  Браузер переопределит путь к 2x изображению если плотность экрана как минимум 2 (for laptop screen) */
+    }
+  }
+  @include xl {
+    max-width: 1170px;
+    background-image: url(../../assets//images/background-xl-x1.jpg); /*  Базовые 1x изображение (for xl screen) */
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: url(../../assets//images/background-xl-x2.jpg); /*  Браузер переопределит путь к 2x изображению если плотность экрана как минимум 2 (for xl screen) */
+    }
+  }
+}
+.block {
+  width: 100%;
+  @include tablet {
+    width: 380px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.title {
+  color: $secondary-text-color;
+  margin-bottom: 21px;
+  text-align: center;
+}
+.description {
+  color: $secondary-text-color;
+  margin-bottom: 32px;
+  text-align: center;
+}
+.btn {
+  display: flex;
+  justify-content: center;
+}

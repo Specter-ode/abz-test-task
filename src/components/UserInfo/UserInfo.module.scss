@@ -1,0 +1,25 @@
+@import '../../sass/utils.scss';
+
+.block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include tablet {
+    justify-content: space-between;
+  }
+}
+.imageBlock {
+  padding: 0 33px;
+  width: 100px;
+}
+.img {
+  width: 34px;
+  height: 34px;
+
+  border-radius: 50%;
+}
+
+.text {
+  padding-left: 33px;
+  border-left: 1px solid $disabled-btn-color;
+}

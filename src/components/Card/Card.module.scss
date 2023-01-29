@@ -1,0 +1,67 @@
+@import '../../sass/utils.scss';
+
+.card {
+  position: relative;
+  padding: 20px;
+  border-radius: 10px;
+  width: 328px;
+  background-color: $secondary-bg-color;
+
+  @include tablet {
+    width: 344px;
+  }
+  @include laptop {
+    width: 282px;
+  }
+}
+.image {
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 20px;
+}
+.name {
+  position: relative;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.info {
+  display: block;
+  text-align: center;
+}
+.email {
+  @extend .info;
+  position: relative;
+}
+
+[card-tooltip]:hover {
+  // добавляем курсор при ховере на элемент у которого есть tooltip
+  cursor: pointer;
+}
+
+[card-tooltip]::after {
+  // стили для tooltip
+  content: attr(card-tooltip);
+  position: absolute;
+  left: -36px;
+  top: 47px;
+  border-radius: 4px;
+  padding: 3px 16px;
+  @extend %primary-font;
+  pointer-events: none;
+  opacity: 0;
+  -webkit-transition: opacity 300ms linear;
+  -moz-transition: opacity 300ms linear;
+  -ms-transition: opacity 300ms linear;
+  -o-transition: opacity 300ms linear;
+  transition: opacity 300ms linear; // плавное появление и исчезновение tooltip
+  background-color: $main-text-color;
+  color: $secondary-text-color;
+  z-index: 100;
+  white-space: nowrap;
+}
+
+[card-tooltip]:hover::after {
+  // tooltip становится видимым при ховере на элемент у которого есть tooltip
+  opacity: 1;
+}

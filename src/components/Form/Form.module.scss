@@ -1,0 +1,216 @@
+@import '../../sass/utils.scss';
+
+.title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.form {
+  margin-left: auto;
+  margin-right: auto;
+  @include tablet {
+    width: 380px;
+  }
+}
+
+.fileError {
+  position: absolute;
+  font-family: 'Asap'; // возможно ошибка в figma, но поменял font-family для errors
+  color: $error-color;
+  @include font(null, 12px, 1.17);
+  left: 16px;
+  top: 60px;
+}
+.error {
+  display: none;
+  @extend .fileError;
+}
+.helperText {
+  position: absolute;
+  color: $third-text-color;
+  @include font(null, 12px, 1.17);
+  left: 16px;
+  top: 60px;
+}
+
+input:-webkit-autofill,                  // input autocomplete закрыл светло-голубой цвет (для браузера Сhrome)
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: $main-text-color;
+  -webkit-box-shadow: 0 0 0px 28px $main-bg-color inset;
+}
+
+.label {
+  position: absolute;
+  color: $third-text-color;
+  left: 16px;
+  top: 14px;
+  background-color: $main-bg-color;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.input:focus ~ .label,
+.input:not(:focus):valid ~ .label {
+  top: 0;
+  transform: translateY(-50%);
+  @include font(500, 12px, 1.17);
+}
+
+// ==================  при ошибке в input если нет focus и placeholder  ========================
+.input:not(:focus):not(:placeholder-shown):invalid {
+  // меняем стандартный на border ниже
+  border: 2px solid $error-color;
+}
+
+.input:not(:focus):not(:placeholder-shown):invalid ~ .label {
+  // меняем цвет шрифт и расположение
+  color: $error-color;
+  top: 0;
+  transform: translateY(-50%);
+  @include font(500, 12px, 1.17);
+}
+.input:not(:focus):not(:placeholder-shown):invalid ~ .error {
+  // span c текстом ошибки становится видимым
+  display: block;
+}
+
+.input:not(:focus):not(:placeholder-shown):invalid ~ .helperText {
+  // span c вспомогательным текстом скрываем
+  display: none;
+}
+// ===============================================================================
+
+.input {
+  outline: none;
+  background-color: $main-bg-color;
+  border-radius: 4px;
+  border: $input-border;
+  padding: 0 16px;
+  width: 100%;
+  height: 56px;
+  @extend %primary-font;
+}
+.inputBlock {
+  position: relative;
+  height: 54px;
+}
+
+.inputBlock:not(:nth-child(3)) {
+  margin-bottom: 50px;
+}
+.inputBlock:nth-child(3) {
+  margin-bottom: 43px;
+}
+
+input[type='radio'] {
+  position: absolute;
+  opacity: 0;
+}
+
+.uploadBlock {
+  position: relative;
+  cursor: pointer;
+  height: 56px;
+  margin-bottom: 50px;
+  display: flex;
+}
+.uploadInput {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.uploadBtn {
+  width: 83px;
+  height: 56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid $main-text-color;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.validUploadBtn {
+  @extend .uploadBtn;
+  border: 1px solid $main-text-color;
+}
+
+.errorUploadBtn {
+  @extend .uploadBtn;
+  border: 2px solid $error-color;
+}
+
+.uploadCustomInput {
+  position: relative;
+  width: 245px;
+  border-left: none;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  @include tablet {
+    width: 297px;
+  }
+}
+
+.validUploadCustomInput {
+  @extend .uploadCustomInput;
+  border-top: $input-border;
+  border-bottom: $input-border;
+  border-right: $input-border;
+}
+
+.errorUploadCustomInput {
+  @extend .uploadCustomInput;
+  border-top: 2px solid $error-color;
+  border-bottom: 2px solid $error-color;
+  border-right: 2px solid $error-color;
+}
+
+[tooltip]:hover {
+  // добавляем курсор при ховере на элемент у которого есть tooltip
+  cursor: pointer;
+}
+
+[tooltip]::after {
+  // стили для tooltip
+  content: attr(tooltip);
+  position: absolute;
+  bottom: -21px;
+  left: 32%;
+  transform: translateY(100%);
+  text-align: center;
+  border-radius: 4px;
+  padding: 3px 16px;
+  @extend %primary-font;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: opacity 300ms linear;
+  -moz-transition: opacity 300ms linear;
+  -ms-transition: opacity 300ms linear;
+  -o-transition: opacity 300ms linear;
+  transition: opacity 300ms linear; // плавное появление и исчезновение tooltip
+  background-color: $main-text-color;
+  color: $secondary-text-color;
+  z-index: 100;
+  white-space: nowrap;
+}
+[tooltip]:hover::after {
+  // tooltip становится видимым при ховере на элемент у которого есть tooltip
+  opacity: 1;
+}
+
+.uploadTextColor {
+  color: $third-text-color;
+}

@@ -1,0 +1,21 @@
+@import '../../sass/utils.scss';
+.btn {
+  width: 100px;
+  border-radius: 80px;
+  padding: 4px 0;
+  border: none;
+  text-align: center;
+  @extend %primary-font;
+  background-color: $main-btn-color;
+}
+.btn:hover {
+  background-color: $hover-btn-color;
+}
+
+.btn:not(:last-child) {
+  margin-right: 10px;
+}
+
+.block {
+  display: flex;
+}

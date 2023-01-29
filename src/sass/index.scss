@@ -1,0 +1,50 @@
+body {
+  margin: 0;
+  font-family: 'Nunito', 'Asap', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  letter-spacing: 0;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.625;
+  background-color: #e5e5e5;
+  color: rgba(0, 0, 0, 0.87);
+  min-height: 100vh;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+h1,
+h2 {
+  font-size: 40px;
+  line-height: 1;
+  padding: 0;
+  margin: 0;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}

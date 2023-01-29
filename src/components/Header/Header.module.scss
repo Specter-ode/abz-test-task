@@ -1,0 +1,28 @@
+@import '../../sass/utils.scss';
+
+.header {
+  background-color: $secondary-bg-color;
+}
+.block {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px 0;
+}
+.logo {
+  width: 104px;
+  height: 26px;
+}
+.box {
+  display: flex;
+  align-items: center;
+}
+.loaderBox {
+  width: 110px;
+}
+.errorBlock {
+  position: absolute;
+  width: 100%;
+  right: 0;
+}

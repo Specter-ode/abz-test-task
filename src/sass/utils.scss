@@ -1,0 +1,43 @@
+/*==================== VARIABLES =======================*/
+$main-text-color: rgba(0, 0, 0, 0.87);
+$secondary-text-color: #ffffff;
+$third-text-color: #7e7e7e;
+$accent-color: #00bdd3;
+$main-btn-color: #f4e041;
+$hover-btn-color: #ffe302;
+$disabled-btn-color: #b4b4b4;
+$error-color: #cb3d40;
+$main-bg-color: #e5e5e5;
+$secondary-bg-color: #ffffff;
+$input-border: 1px solid #d0cfcf;
+
+%primary-font {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.625;
+}
+/*==================== MIXINS ==================*/
+
+@mixin font($fw, $fs, $lh) {
+  font-weight: $fw;
+  font-size: $fs;
+  line-height: $lh;
+}
+
+@mixin tablet {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media screen and (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media screen and (min-width: 2560px) {
+    @content;
+  }
+}
