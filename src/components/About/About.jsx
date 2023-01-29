@@ -15,7 +15,15 @@ const About = ({ marginBottom = 140 }) => {
             interfaces with accessibility in mind. They should also be excited to learn, as the
             world of Front-End Development keeps evolving.
           </p>
-          <Link className={s.btn} to="sign up" spy={true} smooth={true} offset={-70} duration={500}>
+          <Link
+            className={s.btn}
+            to="sign up"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+            href="#sign-up"
+          >
             <Button title="Sign up" />
           </Link>
         </div>
