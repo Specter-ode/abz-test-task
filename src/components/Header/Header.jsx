@@ -11,7 +11,9 @@ const Header = ({ currentUser, isLoading, error }) => {
     <header className={s.header}>
       <Container>
         <div className={s.block}>
-          <Logo className={s.logo} />
+          <a className={s.logo} href="/">
+            <Logo />
+          </a>
           {error ? (
             <PromiseError title={error} marginBottom={0} marginLeft={20} />
           ) : (
