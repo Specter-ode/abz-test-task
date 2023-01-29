@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/abz-test-task/static/css/main.6d9730c6.css",
-    "main.js": "/abz-test-task/static/js/main.56ea8020.js",
-    "static/media/background-xl-x2.jpg": "/abz-test-task/static/media/background-xl-x2.0bd954e8b285becfbe23.jpg",
-    "static/media/background-laptop-x2.jpg": "/abz-test-task/static/media/background-laptop-x2.ab45db761205e9324441.jpg",
-    "static/media/background-tablet-x2.jpg": "/abz-test-task/static/media/background-tablet-x2.566326ebaf05fdf6b51c.jpg",
-    "static/media/background-mob-x2.jpg": "/abz-test-task/static/media/background-mob-x2.9f9f4fb48f097a27b3b7.jpg",
-    "static/media/background-xl-x1.jpg": "/abz-test-task/static/media/background-xl-x1.a944615d95d91eb82144.jpg",
-    "static/media/background-laptop-x1.jpg": "/abz-test-task/static/media/background-laptop-x1.9650cac69cbedb204885.jpg",
-    "static/media/background-tablet-x1.jpg": "/abz-test-task/static/media/background-tablet-x1.7fde23d6093638644e7c.jpg",
-    "static/media/background-mob-x1.jpg": "/abz-test-task/static/media/background-mob-x1.154980fb4197e3704a7e.jpg",
-    "static/media/logo.svg": "/abz-test-task/static/media/logo.3d42f8c7b665ded32dbffebe95a5d2d1.svg",
-    "static/media/register-success-2x.png": "/abz-test-task/static/media/register-success-2x.ef927022ec1aa0dfb89d.png",
-    "index.html": "/abz-test-task/index.html",
-    "static/media/loader.svg": "/abz-test-task/static/media/loader.c3e2383783d7f2eeeb2eec5441cd1e93.svg",
-    "static/media/checked.svg": "/abz-test-task/static/media/checked.4f4334cbb189e4ee10c4a9a5634948a7.svg",
-    "static/media/unchecked.svg": "/abz-test-task/static/media/unchecked.46651534997a9a92291f31c7959c801e.svg",
-    "main.6d9730c6.css.map": "/abz-test-task/static/css/main.6d9730c6.css.map",
-    "main.56ea8020.js.map": "/abz-test-task/static/js/main.56ea8020.js.map"
+    "main.css": "/static/css/main.49129c9e.css",
+    "main.js": "/static/js/main.b8106656.js",
+    "static/media/background-xl-x2.jpg": "/static/media/background-xl-x2.0bd954e8b285becfbe23.jpg",
+    "static/media/background-laptop-x2.jpg": "/static/media/background-laptop-x2.ab45db761205e9324441.jpg",
+    "static/media/background-tablet-x2.jpg": "/static/media/background-tablet-x2.566326ebaf05fdf6b51c.jpg",
+    "static/media/background-mob-x2.jpg": "/static/media/background-mob-x2.9f9f4fb48f097a27b3b7.jpg",
+    "static/media/background-xl-x1.jpg": "/static/media/background-xl-x1.a944615d95d91eb82144.jpg",
+    "static/media/background-laptop-x1.jpg": "/static/media/background-laptop-x1.9650cac69cbedb204885.jpg",
+    "static/media/background-tablet-x1.jpg": "/static/media/background-tablet-x1.7fde23d6093638644e7c.jpg",
+    "static/media/background-mob-x1.jpg": "/static/media/background-mob-x1.154980fb4197e3704a7e.jpg",
+    "static/media/logo.svg": "/static/media/logo.3d42f8c7b665ded32dbffebe95a5d2d1.svg",
+    "static/media/register-success-2x.png": "/static/media/register-success-2x.ef927022ec1aa0dfb89d.png",
+    "index.html": "/index.html",
+    "static/media/loader.svg": "/static/media/loader.c3e2383783d7f2eeeb2eec5441cd1e93.svg",
+    "static/media/checked.svg": "/static/media/checked.4f4334cbb189e4ee10c4a9a5634948a7.svg",
+    "static/media/unchecked.svg": "/static/media/unchecked.46651534997a9a92291f31c7959c801e.svg",
+    "main.49129c9e.css.map": "/static/css/main.49129c9e.css.map",
+    "main.b8106656.js.map": "/static/js/main.b8106656.js.map"
   },
   "entrypoints": [
-    "static/css/main.6d9730c6.css",
-    "static/js/main.56ea8020.js"
+    "static/css/main.49129c9e.css",
+    "static/js/main.b8106656.js"
   ]
 }
