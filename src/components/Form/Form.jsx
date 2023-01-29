@@ -153,7 +153,7 @@ const Form = ({ title, positions, onSubmit, isLoading, registerStatus, errorPosi
             />
           )}
 
-          <div className={s.uploadBlock}>
+          <label for="user-photo" className={s.uploadBlock}>
             <input
               id="user-photo"
               type="file"
@@ -180,7 +180,7 @@ const Form = ({ title, positions, onSubmit, isLoading, registerStatus, errorPosi
             )}
 
             {photoError && <span className={s.fileError}>{photoError}</span>}
-          </div>
+          </label>
           <div className={s.btnContainer}>
             <Button title="Sign up" disabled={isDisabled} />
           </div>

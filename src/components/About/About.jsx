@@ -1,6 +1,5 @@
 import s from './About.module.scss';
 import Container from 'components/Container/Container';
-import Button from 'components/Button/Button';
 import { Link } from 'react-scroll';
 
 const About = ({ marginBottom = 140 }) => {
@@ -17,14 +16,14 @@ const About = ({ marginBottom = 140 }) => {
           </p>
           <Link
             className={s.btn}
-            to="sign up"
+            to="sign-up"
             spy={true}
             smooth={true}
             offset={-70}
             duration={500}
             href="#sign-up"
           >
-            <Button title="Sign up" />
+            Sign up
           </Link>
         </div>
       </Container>
