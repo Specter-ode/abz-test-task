@@ -21,6 +21,9 @@
     gap: 29px;
     grid-template-columns: repeat(3, 282px);
   }
+  @include xl {
+    grid-template-columns: repeat(3, 370px);
+  }
 }
 
 .btnBlock {

@@ -150,7 +150,6 @@ input[type='radio'] {
 }
 
 .uploadCustomInput {
-  position: relative;
   width: 245px;
   border-left: none;
   padding: 0 15px;
@@ -186,11 +185,11 @@ input[type='radio'] {
 [tooltip]::after {
   // стили для tooltip
   content: attr(tooltip);
-  position: absolute;
-  bottom: -21px;
-  left: 32%;
-  transform: translateY(100%);
   text-align: center;
+  bottom: -21px;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  position: absolute;
   border-radius: 4px;
   padding: 3px 16px;
   @extend %primary-font;
@@ -204,7 +203,8 @@ input[type='radio'] {
   background-color: $main-text-color;
   color: $secondary-text-color;
   z-index: 100;
-  white-space: nowrap;
+  overflow-wrap: break-word; // делаем перенос в случае достижении макс.ширины
+  max-width: 100vw; // ограничиваем ширину toolpit чтоб его не скрыл экран
 }
 [tooltip]:hover::after {
   // tooltip становится видимым при ховере на элемент у которого есть tooltip

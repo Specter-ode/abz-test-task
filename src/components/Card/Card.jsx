@@ -21,9 +21,15 @@ const Card = ({ card }) => {
         value: text.length > 31 ? text.slice(0, 29) + '...' : text,
       };
     }
+    if (width < 2560) {
+      return {
+        tooltip: text.length > 25,
+        value: text.length > 25 ? text.slice(0, 23) + '...' : text,
+      };
+    }
     return {
-      tooltip: text.length > 25,
-      value: text.length > 25 ? text.slice(0, 23) + '...' : text,
+      tooltip: text.length > 34,
+      value: text.length > 34 ? text.slice(0, 32) + '...' : text,
     };
   };
 
