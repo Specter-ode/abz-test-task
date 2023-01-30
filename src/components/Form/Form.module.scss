@@ -33,7 +33,7 @@
   top: 60px;
 }
 
-input:-webkit-autofill,                  // input autocomplete закрыл светло-голубой цвет (для браузера Сhrome)
+input:-webkit-autofill,                  // закрыл светло-голубой фон браузера в input при autocomplete 
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus {
   -webkit-text-fill-color: $main-text-color;
