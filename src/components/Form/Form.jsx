@@ -7,22 +7,29 @@ import RadioList from 'components/RadioList/RadioList';
 import * as validateImg from 'services/helpers/validateImg';
 import useWindowDimensions from 'services/hooks/useWindowDimensions';
 
-const initialState = {
+const formInitialState = {
   name: '',
   email: '',
   phone: '',
   position_id: '',
   photo: '',
 };
+const initialStateErrors = {
+  name: true,
+  email: true,
+  phone: true,
+};
 
 const Form = ({ title, positions, onSubmit, isLoading, registerStatus, errorPositions }) => {
   const { width } = useWindowDimensions();
-  const [state, setState] = useState(initialState); // state формы, который мы отправляем при onSubmit
-  const [photoName, setPhotoName] = useState(''); // название файла, необходимо для рендера в кастомным file input
+  const [state, setState] = useState(formInitialState); // state формы, который мы отправляем при onSubmit
+  const [formErrors, setFormErrors] = useState(initialStateErrors); // state ошибок формы полей name, email, phone
+  const [photoName, setPhotoName] = useState(''); // название файла, необходимо для рендера в custom file input
   const [photoError, setPhotoError] = useState(''); // при сохранение файла он проходит несколько проверок и сообщение сохраняем сюда чтоб можно было отрендерить
 
   const handleChange = ({ target }) => {
-    const { type, name, value, files } = target;
+    const { type, name, value, files, validationMessage } = target;
+    console.log('validity: ', validationMessage);
 
     const newValue = () => {
       // в зависимости от типа инпута value будет отличаться
@@ -51,12 +58,17 @@ const Form = ({ title, positions, onSubmit, isLoading, registerStatus, errorPosi
           setPhotoError('Image height and width must be not less 70px.');
           return;
         }
+
         setPhotoName(file.name); // после прохождения проверок сохраняем
         setPhotoError('');
         return file;
       }
       return value.trim();
     };
+    setFormErrors(prevState => ({
+      ...prevState,
+      [name]: validationMessage,
+    }));
     setState(prevState => ({
       ...prevState,
       [name]: newValue(),
@@ -65,15 +77,24 @@ const Form = ({ title, positions, onSubmit, isLoading, registerStatus, errorPosi
 
   const handleSubmit = e => {
     e.preventDefault();
+
     onSubmit(state);
-    setState({ ...initialState });
+    setState(formInitialState);
+    setFormErrors(initialStateErrors);
     setPhotoName('');
   };
-
-  const { name, email, photo, position_id, phone } = state;
-  const isDisabled = !name || !email || !photo || !position_id || !phone || registerStatus; // условия для кнопки sign up, она недоступна ecли поля форма не заполнены либо пользователь уже зарегистрирован
+  const { name, email, position_id, phone } = state;
   const uploadBtnStyle = photoError ? s.errorUploadBtn : s.validUploadBtn; // стили для кастомного input type['file'] в случае не прохождения валидации они меняютмя.
   const uploadInputStyle = photoError ? s.errorUploadCustomInput : s.validUploadCustomInput; // состоит из двух span_ов: визуально кнопка и инпут
+
+  // условия для кнопки sign up, она недоступна ecли поля форма не заполнены либо есть ошибки либо пользователь уже зарегистрирован
+  const isDisabled =
+    formErrors.name ||
+    formErrors.email ||
+    formErrors.phone ||
+    !photoName ||
+    !position_id ||
+    registerStatus;
 
   return (
     <section id="sign-up">
@@ -81,7 +102,7 @@ const Form = ({ title, positions, onSubmit, isLoading, registerStatus, errorPosi
         <h2 className={s.title}>{title}</h2>
         <form className={s.form} onSubmit={handleSubmit}>
           <div className={s.inputBlock}>
-            <label for="username">
+            <label htmlFor="username">
               <input
                 id="username"
                 className={s.input}
@@ -99,7 +120,7 @@ const Form = ({ title, positions, onSubmit, isLoading, registerStatus, errorPosi
             </label>
           </div>
           <div className={s.inputBlock}>
-            <label for="user-email">
+            <label htmlFor="user-email">
               <input
                 id="user-email"
                 className={s.input}
@@ -121,7 +142,7 @@ const Form = ({ title, positions, onSubmit, isLoading, registerStatus, errorPosi
             </label>
           </div>
           <div className={s.inputBlock}>
-            <label for="user-phone">
+            <label htmlFor="user-phone">
               <input
                 id="user-phone"
                 className={s.input}
@@ -153,7 +174,7 @@ const Form = ({ title, positions, onSubmit, isLoading, registerStatus, errorPosi
             />
           )}
 
-          <label for="user-photo" className={s.uploadBlock}>
+          <label htmlFor="user-photo" className={s.uploadBlock}>
             <input
               id="user-photo"
               type="file"

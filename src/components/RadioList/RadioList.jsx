@@ -12,7 +12,7 @@ const RadioList = ({ title, name, positions, handleChange, position_id, error })
       {positions.map(el => {
         return (
           <div key={el.id} className={s.block}>
-            <label for={el.name} className={s.label}>
+            <label htmlFor={el.name} className={s.label}>
               <input
                 id={el.name}
                 className={s.lnput}
