@@ -64,13 +64,17 @@
   z-index: 100;
   overflow-wrap: break-word; // делаем перенос в случае достижении макс.ширины
   max-width: 100vw; // ограничиваем ширину toolpit чтоб его не скрыл экран
+  min-width: 288px;
   @include tablet {
+    mix-width: 344px;
     max-width: calc(50vw + 24px);
   }
   @include laptop {
+    min-width: 282px;
     max-width: calc(100vw / 3 + 62px);
   }
   @include xl {
+    min-width: 370px;
     max-width: 50vh;
   }
 }

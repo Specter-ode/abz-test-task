@@ -29,7 +29,6 @@ const Form = ({ title, positions, onSubmit, isLoading, registerStatus, errorPosi
 
   const handleChange = ({ target }) => {
     const { type, name, value, files, validationMessage } = target;
-    console.log('validity: ', validationMessage);
 
     const newValue = () => {
       // в зависимости от типа инпута value будет отличаться
@@ -132,7 +131,7 @@ const Form = ({ title, positions, onSubmit, isLoading, registerStatus, errorPosi
                 minLength="2"
                 maxLength="100"
                 placeholder=" "
-                title="MaximilianMaximilian@gmail.com"
+                title="example@gmail.com"
                 pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
               />
               <span className={s.label}>Email</span>

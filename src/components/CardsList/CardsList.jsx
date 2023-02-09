@@ -44,7 +44,7 @@ const CardsList = ({
               <Button title="Show prev" width={120} type="button" onClick={moveToPrevPage} />
             )}
             {isBtnMoveToNext && (
-              <Button title="Show more" width={120} type="button" onClick={moveToNextPage} />
+              <Button title="Show next" width={120} type="button" onClick={moveToNextPage} />
             )}
           </div>
         </div>
